@@ -1,6 +1,7 @@
 name: WebdriverIO Tests
 
 on:
+  workflow_dispatch:        # <-- Add this line
   push:
     branches: [ main ]
   pull_request:
