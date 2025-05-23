@@ -63,6 +63,6 @@ jobs:
           subject: Allure Test Report
           to: ry.yadavrahul10@gmail.com
           from: GitHub Actions <${{ secrets.EMAIL_USERNAME }}>
-          html_body: |
-  <p>Your Allure report is ready:</p>
-  <a href="https://RahulPratice.github.io/WebDriverIo/">View Allure Report</a>
+          html_body: 
+             <p>Your Allure report is ready:</p>
+             <a href="https://RahulPratice.github.io/WebDriverIo/">View Allure Report</a>
