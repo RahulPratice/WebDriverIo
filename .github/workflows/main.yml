@@ -63,7 +63,6 @@ jobs:
           subject: Allure Test Report
           to: your@email.com
           from: GitHub Actions <${{ secrets.EMAIL_USERNAME }}>
-          content_type: text/html
-          body: |
+          html_body: |
             <p>Your Allure report is ready:</p>
             <a href="https://<your-username>.github.io/<your-repo>/">View Allure Report</a>
