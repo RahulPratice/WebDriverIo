@@ -53,17 +53,17 @@ jobs:
           publish_dir: ./allure-report
           publish_branch: gh-pages
 
-      - name: Save Allure report to allure-history branch
+      - name: Save Allure report link with date to allure-history branch
         if: success()
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git fetch origin allure-history || true
           git checkout allure-history || git checkout --orphan allure-history
-          mkdir -p reports/${{ github.run_number }}
-          cp -r allure-report/* reports/${{ github.run_number }}/
-          git add reports/${{ github.run_number }}
-          git commit -m "Add Allure report for run ${{ github.run_number }}"
+          touch allure-report-links.md
+          echo "- **$(date '+%Y-%m-%d %H:%M:%S')**: [Allure Report](https://RahulPratice.github.io/WebDriverIo/)" >> allure-report-links.md
+          git add allure-report-links.md
+          git commit -m "Add Allure report link for run ${{ github.run_number }}"
           git push origin allure-history
 
       - name: Send Allure report link via email
