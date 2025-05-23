@@ -61,7 +61,6 @@ jobs:
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: Allure Test Report
-          to: your@email.com
           from: GitHub Actions <${{ secrets.EMAIL_USERNAME }}>
           html_body: |
             <p>Your Allure report is ready:</p>
