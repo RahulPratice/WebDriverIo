@@ -53,6 +53,19 @@ jobs:
           publish_dir: ./allure-report
           publish_branch: gh-pages
 
+      - name: Save Allure report to allure-history branch
+        if: success()
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin allure-history || true
+          git checkout allure-history || git checkout --orphan allure-history
+          mkdir -p reports/${{ github.run_number }}
+          cp -r allure-report/* reports/${{ github.run_number }}/
+          git add reports/${{ github.run_number }}
+          git commit -m "Add Allure report for run ${{ github.run_number }}"
+          git push origin allure-history
+
       - name: Send Allure report link via email
         uses: dawidd6/action-send-mail@v3
         with:
@@ -63,6 +76,6 @@ jobs:
           subject: Allure Test Report
           to: ry.yadavrahul10@gmail.com , rahulyadav63010@gmail.com , rahul.yadav36@ibm.com
           from: GitHub Actions <${{ secrets.EMAIL_USERNAME }}>
-          html_body: 
-             <p>Your Allure report is ready:</p>
-             <a href="https://RahulPratice.github.io/WebDriverIo/">View Allure Report</a>
+          html_body: |
+            <p>Your Allure report is ready:</p>
+            <a href="https://RahulPratice.github.io/WebDriverIo/">View Allure Report</a>
