@@ -74,7 +74,7 @@ jobs:
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: Allure Test Report
-          to: ry.yadavrahul10@gmail.com , rahulyadav63010@gmail.com , rahul.yadav36@ibm.com
+          to: ry.yadavrahul10@gmail.com , rahulyadav63010@gmail.com 
           from: GitHub Actions <${{ secrets.EMAIL_USERNAME }}>
           html_body: |
             <p>Your Allure report is ready:</p>
