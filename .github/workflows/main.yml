@@ -69,8 +69,8 @@ jobs:
           touch allure-report-links.md
           echo "- **$(date '+%Y-%m-%d %H:%M:%S')**: [Allure Report](https://RahulPratice.github.io/WebDriverIo/)" >> allure-report-links.md
           git add allure-report-links.md
-          git commit -m "Add Allure report link for run ${{ github.run_number }}"
-          git push origin allure-history
+          git commit -m "Add Allure report link for run ${{ github.run_number }}" || true
+          git push --force origin allure-history
 
       - name: Send Allure report link via email
         uses: dawidd6/action-send-mail@v3
