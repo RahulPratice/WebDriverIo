@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+body {
+    font-family: 'Ubuntu', sans-serif!important;
+}
+.custom-header {
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    background-image: url();
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: 2rem ;
+}
+.custom-header h1 {
+    font-size: 3rem;
+}
+.custom-subtitle {
+    display: flex;
+    justify-content: space-evenly;
+}

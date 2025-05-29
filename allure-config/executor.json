@@ -1,0 +1,6 @@
+{
+    "name": "GitHub Actions",
+    "type": "GitHub Actions",
+    "buildName": "#{BUILD_NAME}",
+    "buildURL": "#{BUILD_URL}"
+}
