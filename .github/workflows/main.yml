@@ -68,4 +68,5 @@ jobs:
           touch allure-report-links.md
           echo "- **$(date '+%Y-%m-%d %H:%M:%S')**: [Allure Report](https://RahulPratice.github.io/WebDriverIo/)" >> allure-report-links.md
           git add allure-report-links.md
-          git commit -m "Add Allure report
+          git commit -m "Add Allure report" -m "Report generated on $(date '+%Y-%m-%d %H:%M:%S')"
+          git push origin allure-history
